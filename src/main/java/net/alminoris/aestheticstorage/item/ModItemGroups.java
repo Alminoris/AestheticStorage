@@ -32,7 +32,7 @@ public class ModItemGroups
                     {
                         for(String name : BlockSetsHelper.COLORS)
                         {
-                            entries.add(ModBlocks.SIMPLE_CARPETS.get(name));
+                            entries.add(ModBlocks.SIMPLE_CABINS.get(name));
                         }
                         for(String name : BlockSetsHelper.COLORS)
                         {
