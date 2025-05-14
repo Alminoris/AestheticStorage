@@ -24,7 +24,7 @@ public class BlockSetsHelper
     public static final String[] EXTRA_WOODS =
             {
                     "hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum", "white_mulberry", "wild_cherry",
-                    "bauhinia", "pine", "fir", "cedar", "olive", "tamarisk"
+                    "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper", "olive", "tamarisk"
             };
 
     public static String[] getWoods()
