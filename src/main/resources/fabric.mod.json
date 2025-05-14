@@ -3,15 +3,15 @@
 	"id": "aestheticstorage",
 	"version": "${version}",
 	"name": "Aesthetic Storage",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod is all about decorative and functional cabinets, cupboards and other storage-related furniture!",
 	"authors": [
-		"Me!"
+		"Almiris (Alminoris)"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "",
+		"sources": "https://github.com/Alminoris/AestheticStorage"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/aestheticstorage/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -29,7 +29,7 @@
 		"aestheticstorage.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.13",
+		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
