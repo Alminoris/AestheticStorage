@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cabinet_flipdown_acacia"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

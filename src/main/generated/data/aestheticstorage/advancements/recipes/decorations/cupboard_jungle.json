@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cupboard_jungle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

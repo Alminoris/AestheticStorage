@@ -4,9 +4,9 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.alminoris.aestheticstorage.AestheticStorage;
 import net.alminoris.aestheticstorage.block.ModBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
@@ -162,14 +162,14 @@ public class CabinetScreen extends HandledScreen<CabinetScreenHandler>
     }
 
     @Override
-    protected void drawForeground(DrawContext context, int mouseX, int mouseY)
+    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY)
     {
-        context.drawText(this.textRenderer, this.title, this.titleX, this.titleY, WOOD_COLORS.get(NAME), false);
-        context.drawText(this.textRenderer, this.playerInventoryTitle, this.playerInventoryTitleX, this.playerInventoryTitleY, WOOD_COLORS.get(NAME), false);
+        textRenderer.draw(matrices, this.title.asOrderedText(), this.titleX, this.titleY, WOOD_COLORS.get(NAME));
+        textRenderer.draw(matrices, this.playerInventoryTitle.asOrderedText(), this.playerInventoryTitleX, this.playerInventoryTitleY, WOOD_COLORS.get(NAME));
     }
 
     @Override
-    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY)
+    protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY)
     {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
@@ -178,14 +178,15 @@ public class CabinetScreen extends HandledScreen<CabinetScreenHandler>
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
 
-        context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
+        // Draw background texture
+        drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta)
+    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta)
     {
-        renderBackground(context);
-        super.render(context, mouseX, mouseY, delta);
-        drawMouseoverTooltip(context, mouseX, mouseY);
+        renderBackground(matrices);
+        super.render(matrices, mouseX, mouseY, delta);
+        drawMouseoverTooltip(matrices, mouseX, mouseY);
     }
 }

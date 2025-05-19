@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cabinet_flipup_crimson"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

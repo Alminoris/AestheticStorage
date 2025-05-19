@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cabinet_oak"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

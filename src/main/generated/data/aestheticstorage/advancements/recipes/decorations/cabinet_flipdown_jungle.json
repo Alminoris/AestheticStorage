@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cabinet_flipdown_jungle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

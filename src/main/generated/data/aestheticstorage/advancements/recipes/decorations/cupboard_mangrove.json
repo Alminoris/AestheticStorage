@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cupboard_mangrove"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

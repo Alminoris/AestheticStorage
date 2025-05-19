@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cupboard_crimson"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

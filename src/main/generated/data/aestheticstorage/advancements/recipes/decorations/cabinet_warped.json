@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cabinet_warped"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -7,8 +7,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -25,9 +23,7 @@ public class ModItemGroups
                     "bauhinia", "pine", "fir", "cedar"
             };
 
-    public static final ItemGroup ASTRG_TAB = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(AestheticStorage.MOD_ID, "astrgtab"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.astrgtab"))
+    public static final ItemGroup ASTRG_TAB = FabricItemGroup.builder(new Identifier(AestheticStorage.MOD_ID, "astrgtab")).displayName(Text.translatable("itemgroup.astrgtab"))
                     .icon(() -> new ItemStack(ModBlocks.CABINETS.get("oak"))).entries((displayContext, entries) ->
                     {
                         if (!FabricLoader.getInstance().isModLoaded("aestheticseating"))
@@ -64,7 +60,7 @@ public class ModItemGroups
                                 entries.add(ModBlocks.CUPBOARDS.get(name));
                             }
                         }
-                    }).build());
+                    }).build();
 
     public static void registerItemGroups()
     {

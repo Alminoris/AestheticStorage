@@ -43,6 +43,5 @@
     "recipes": [
       "aestheticstorage:cabinet_spruce"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
