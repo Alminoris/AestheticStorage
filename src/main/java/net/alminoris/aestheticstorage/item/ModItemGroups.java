@@ -38,68 +38,8 @@ public class ModItemGroups
                         for(String name : BlockSetsHelper.WOODS)
                         {
                             entries.add(ModBlocks.CABINETS.get(name));
-                        }
-
-                        if (FabricLoader.getInstance().isModLoaded("arborealnature"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
-                            {
-                                entries.add(ModBlocks.CABINETS.get(name));
-                            }
-                        }
-
-                        if (FabricLoader.getInstance().isModLoaded("wildfields"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
-                            {
-                                entries.add(ModBlocks.CABINETS.get(name));
-                            }
-                        }
-
-                        for(String name : BlockSetsHelper.WOODS)
-                        {
                             entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
-                        }
-
-                        if (FabricLoader.getInstance().isModLoaded("arborealnature"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
-                            {
-                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
-                            }
-                        }
-
-                        if (FabricLoader.getInstance().isModLoaded("wildfields"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
-                            {
-                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
-                            }
-                        }
-
-                        for(String name : BlockSetsHelper.WOODS)
-                        {
                             entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
-                        }
-
-                        if (FabricLoader.getInstance().isModLoaded("arborealnature"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
-                            {
-                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
-                            }
-                        }
-
-                        if (FabricLoader.getInstance().isModLoaded("wildfields"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
-                            {
-                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
-                            }
-                        }
-
-                        for(String name : BlockSetsHelper.WOODS)
-                        {
                             entries.add(ModBlocks.CUPBOARDS.get(name));
                         }
 
@@ -107,6 +47,9 @@ public class ModItemGroups
                         {
                             for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
                             {
+                                entries.add(ModBlocks.CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
                                 entries.add(ModBlocks.CUPBOARDS.get(name));
                             }
                         }
@@ -115,6 +58,9 @@ public class ModItemGroups
                         {
                             for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
                             {
+                                entries.add(ModBlocks.CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
                                 entries.add(ModBlocks.CUPBOARDS.get(name));
                             }
                         }
