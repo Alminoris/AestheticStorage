@@ -1,6 +1,8 @@
 package net.alminoris.aestheticstorage.block;
 
 import net.alminoris.aestheticstorage.AestheticStorage;
+import net.alminoris.aestheticstorage.block.custom.CabinetBlock;
+import net.alminoris.aestheticstorage.block.custom.CupboardBlock;
 import net.alminoris.aestheticstorage.util.helper.BlockSetsHelper;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -17,19 +19,35 @@ import java.util.Hashtable;
 
 public class ModBlocks
 {
-    public static final Dictionary<String, Block> SIMPLE_CARPETS = new Hashtable<>()
+    public static final Dictionary<String, Block> CABINETS = new Hashtable<>()
     {{
-        for(String name : BlockSetsHelper.COLORS)
+        for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("simple_carpet"+name, new CarpetBlock(AbstractBlock.Settings.copy(Blocks.BLACK_CARPET))));
+            put(name, registerBlock("cabinet_"+name, new CabinetBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), false)));
         }
     }};
 
-    public static final Dictionary<String, Block> SIMPLE_CARPET_BLOCKS = new Hashtable<>()
+    public static final Dictionary<String, Block> FLIPUP_CABINETS = new Hashtable<>()
     {{
-        for(String name : BlockSetsHelper.COLORS)
+        for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("simple_carpet_"+name+"_block", new CarpetBlock(AbstractBlock.Settings.copy(Blocks.BLACK_CARPET))));
+            put(name, registerBlock("cabinet_flipup_"+name, new CabinetBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), true)));
+        }
+    }};
+
+    public static final Dictionary<String, Block> FLIPDOWN_CABINETS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getWoods())
+        {
+            put(name, registerBlock("cabinet_flipdown_"+name, new CabinetBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), true)));
+        }
+    }};
+
+    public static final Dictionary<String, Block> CUPBOARDS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getWoods())
+        {
+            put(name, registerBlock("cupboard_"+name, new CupboardBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))));
         }
     }};
 

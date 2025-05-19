@@ -1,8 +1,10 @@
 package net.alminoris.aestheticstorage;
 
 import net.alminoris.aestheticstorage.block.ModBlocks;
+import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
 import net.alminoris.aestheticstorage.item.ModItemGroups;
 import net.alminoris.aestheticstorage.item.ModItems;
+import net.alminoris.aestheticstorage.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -20,5 +22,7 @@ public class AestheticStorage implements ModInitializer
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
 		ModItemGroups.registerItemGroups();
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
 	}
 }

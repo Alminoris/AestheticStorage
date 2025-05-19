@@ -1,0 +1,48 @@
+package net.alminoris.aestheticstorage.block.entity;
+
+import net.alminoris.aestheticstorage.AestheticStorage;
+import net.alminoris.aestheticstorage.block.ModBlocks;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
+
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+public class ModBlockEntities
+{
+    public static final BlockEntityType<CabinetBlockEntity> CABINET_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(AestheticStorage.MOD_ID, "cabinet_be"),
+                    FabricBlockEntityTypeBuilder.create(CabinetBlockEntity::new,
+                            toBlockArray(ModBlocks.CABINETS.elements(),
+                                    ModBlocks.FLIPUP_CABINETS.elements(),
+                                    ModBlocks.FLIPDOWN_CABINETS.elements())).build());
+
+    public static final BlockEntityType<CupboardBlockEntity> CUPBOARD_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(AestheticStorage.MOD_ID, "cupboard_be"),
+                    FabricBlockEntityTypeBuilder.create(CupboardBlockEntity::new,
+                            toBlockArray(ModBlocks.CUPBOARDS.elements())).build());
+
+    public static void registerBlockEntities()
+    {
+
+    }
+
+    private static Block[] toBlockArray(Enumeration<Block>... enumerations)
+    {
+        List<Block> blocks = new ArrayList<>();
+        for(var enumeration : enumerations)
+        {
+            while (enumeration.hasMoreElements())
+            {
+                blocks.add(enumeration.nextElement());
+            }
+        }
+
+        return blocks.toArray(new Block[0]);
+    }
+}
