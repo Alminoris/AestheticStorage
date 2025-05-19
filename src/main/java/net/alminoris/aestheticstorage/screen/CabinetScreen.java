@@ -3,7 +3,6 @@ package net.alminoris.aestheticstorage.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.alminoris.aestheticstorage.AestheticStorage;
 import net.alminoris.aestheticstorage.block.ModBlocks;
-import net.alminoris.aestheticstorage.util.helper.BlockSetsHelper;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -185,7 +184,7 @@ public class CabinetScreen extends HandledScreen<CabinetScreenHandler>
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta)
     {
-        renderBackground(context, mouseX, mouseY, delta);
+        renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
     }

@@ -71,8 +71,6 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
 
     public static final EnumProperty<CupboardBlock.Variant> VARIANT = EnumProperty.of("variant", CupboardBlock.Variant.class);
 
-    public static final MapCodec<CupboardBlock> CODEC = CupboardBlock.createCodec(CupboardBlock::new);
-
     public CupboardBlock(Settings settings)
     {
         super(settings.nonOpaque());
@@ -87,25 +85,19 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     }
 
     @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec()
-    {
-        return CODEC;
-    }
-
-    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
         return SHAPE;
     }
 
     @Override
-    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
         return SHAPE;
     }
 
     @Override
-    protected VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+    public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
         return SHAPE;
     }
@@ -186,7 +178,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     }
 
     @Override
-    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
+    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
     {
         if (state.getBlock() != newState.getBlock())
         {
@@ -201,7 +193,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     }
 
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit)
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
     {
         if (!player.getMainHandStack().isEmpty())
         {
@@ -216,7 +208,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
 
                 while (!stack.isEmpty())
                 {
-                    BlockPos currentPos = stack.removeLast();
+                    BlockPos currentPos = stack.remove(stack.size()-1);
                     if (!visited.add(currentPos)) continue;
 
                     BlockState currentState = world.getBlockState(currentPos);
@@ -260,7 +252,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
 
         while (!stack.isEmpty())
         {
-            BlockPos currentPos = stack.removeLast();
+            BlockPos currentPos = stack.remove(stack.size()-1);
             if (!visited.add(currentPos)) continue;
 
             BlockState currentState = world.getBlockState(currentPos);
@@ -291,8 +283,13 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
     {
-        return validateTicker(type, ModBlockEntities.CUPBOARD_BLOCK_ENTITY,
-                (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
+        return type == ModBlockEntities.CUPBOARD_BLOCK_ENTITY ? (world1, pos, state1, blockEntity) ->
+        {
+            if (blockEntity instanceof CupboardBlockEntity cupboardBlockEntity)
+            {
+                cupboardBlockEntity.tick(world1, pos, state1);
+            }
+        } : null;
     }
 
     @Override

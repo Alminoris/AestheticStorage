@@ -2,13 +2,13 @@ package net.alminoris.aestheticstorage.screen;
 
 import net.alminoris.aestheticstorage.block.custom.CupboardBlock;
 import net.alminoris.aestheticstorage.block.entity.CupboardBlockEntity;
-import net.alminoris.aestheticstorage.network.BlockPosPayload;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
@@ -26,9 +26,9 @@ public class CupboardScreenHandler extends ScreenHandler
     public final CupboardBlockEntity blockEntity;
 
     //Client
-    public CupboardScreenHandler(int syncId, PlayerInventory inventory, BlockPosPayload payload)
+    public CupboardScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf)
     {
-        this(syncId, inventory, (CupboardBlockEntity) inventory.player.getWorld().getBlockEntity(payload.pos()));
+        this(syncId, inventory, (CupboardBlockEntity) inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
 
     //Server
@@ -74,7 +74,7 @@ public class CupboardScreenHandler extends ScreenHandler
 
         while (!stack.isEmpty())
         {
-            BlockPos currentPos = stack.removeLast();
+            BlockPos currentPos = stack.remove(stack.size()-1);
             if (!visited.add(currentPos)) continue;
 
             BlockState currentState = world.getBlockState(currentPos);

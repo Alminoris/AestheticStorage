@@ -1,6 +1,5 @@
 package net.alminoris.aestheticstorage.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
 import net.alminoris.aestheticstorage.block.entity.CabinetBlockEntity;
 import net.minecraft.block.*;
@@ -19,10 +18,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -56,13 +52,6 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
 
     public static final EnumProperty<Variant> VARIANT = EnumProperty.of("variant", Variant.class);
 
-    // getCodec cannot use dynamic constructor args
-    public static final MapCodec<CabinetBlock> CODEC_WITH_FLIP =
-            createCodec(settings -> new CabinetBlock(settings, true));
-
-    public static final MapCodec<CabinetBlock> CODEC_WITHOUT_FLIP =
-            createCodec(settings -> new CabinetBlock(settings, false));
-
     public CabinetBlock(Settings settings, boolean hasFlip)
     {
         super(settings.nonOpaque());
@@ -74,12 +63,6 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder)
     {
         builder.add(FACING, VARIANT, OPEN, WATERLOGGED);
-    }
-
-    @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec()
-    {
-        return HAS_FLIP ? CODEC_WITH_FLIP : CODEC_WITHOUT_FLIP;
     }
 
     @Override
@@ -121,7 +104,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     }
 
     @Override
-    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
+    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
     {
         if (state.getBlock() != newState.getBlock())
         {
@@ -136,7 +119,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     }
 
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit)
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
     {
         if (!player.getMainHandStack().isEmpty())
         {
@@ -216,8 +199,13 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
     {
-        return validateTicker(type, ModBlockEntities.CABINET_BLOCK_ENTITY,
-                (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
+        return type == ModBlockEntities.CABINET_BLOCK_ENTITY ? (world1, pos, state1, blockEntity) ->
+        {
+            if (blockEntity instanceof CabinetBlockEntity cabinetBlockEntity)
+            {
+                cabinetBlockEntity.tick(world1, pos, state1);
+            }
+        } : null;
     }
 
     @Override
