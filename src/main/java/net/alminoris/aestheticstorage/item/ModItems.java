@@ -13,7 +13,7 @@ public class ModItems
 
     private static Item registerItem(String name, Item item)
     {
-        return Registry.register(Registry.ITEM, Identifier.of(AestheticStorage.MOD_ID, name), item);
+        return Registry.register(Registry.ITEM, new Identifier(AestheticStorage.MOD_ID, name), item);
     }
 
     public static void registerItems()

@@ -57,7 +57,7 @@ public class ModModelProvider extends FabricModelProvider
         ModJsonHelper.registerCabinetBlockModel(ModJsonTemplates.CABINET_LEFT, name, modId+baseName, modId+legName, "left", false);
         ModJsonHelper.registerCabinetBlockModel(ModJsonTemplates.CABINET_RIGHT, name, modId+baseName, modId+legName, "right", false);
         ModJsonHelper.createBlockstate(ModJsonTemplates.CABINET_BLOCKSTATE, name);
-        blockStateModelGenerator.registerParentedItemModel(block, Identifier.of(AestheticStorage.MOD_ID, "block/"+ name+"_right"));
+        blockStateModelGenerator.registerParentedItemModel(block, new Identifier(AestheticStorage.MOD_ID, "block/"+ name+"_right"));
     }
 
     public void registerCabinetFlipup(BlockStateModelGenerator blockStateModelGenerator, Block block, String modId, String name, String baseName, String legName)
@@ -69,7 +69,7 @@ public class ModModelProvider extends FabricModelProvider
         ModJsonHelper.registerCabinetBlockModel(ModJsonTemplates.FLIPUP_CABINET_LEFT, name, modId+baseName, modId+legName, "left", false);
         ModJsonHelper.registerCabinetBlockModel(ModJsonTemplates.FLIPUP_CABINET_RIGHT, name, modId+baseName, modId+legName, "right", false);
         ModJsonHelper.createBlockstate(ModJsonTemplates.FLIP_CABINET_BLOCKSTATE, name);
-        blockStateModelGenerator.registerParentedItemModel(block, Identifier.of(AestheticStorage.MOD_ID, "block/"+ name));
+        blockStateModelGenerator.registerParentedItemModel(block, new Identifier(AestheticStorage.MOD_ID, "block/"+ name));
     }
 
     public void registerCabinetFlipdown(BlockStateModelGenerator blockStateModelGenerator, Block block, String modId, String name, String baseName, String legName)
@@ -81,7 +81,7 @@ public class ModModelProvider extends FabricModelProvider
         ModJsonHelper.registerCabinetBlockModel(ModJsonTemplates.FLIPDOWN_CABINET_LEFT, name, modId+baseName, modId+legName, "left", false);
         ModJsonHelper.registerCabinetBlockModel(ModJsonTemplates.FLIPDOWN_CABINET_RIGHT, name, modId+baseName, modId+legName, "right", false);
         ModJsonHelper.createBlockstate(ModJsonTemplates.FLIP_CABINET_BLOCKSTATE, name);
-        blockStateModelGenerator.registerParentedItemModel(block, Identifier.of(AestheticStorage.MOD_ID, "block/"+ name));
+        blockStateModelGenerator.registerParentedItemModel(block, new Identifier(AestheticStorage.MOD_ID, "block/"+ name));
     }
 
     public void registerCupboard(BlockStateModelGenerator blockStateModelGenerator, Block block, String modId, String name, String baseName, String legName)
@@ -119,7 +119,7 @@ public class ModModelProvider extends FabricModelProvider
         ModJsonHelper.registerCupboardBlockModel(ModJsonTemplates.CUPBOARD_CENTER_OPEN_FLIPPED, name, modId+baseName, modId+legName, "center",
                 true, true);
         ModJsonHelper.createBlockstate(ModJsonTemplates.CUPBOARD_BLOCKSTATE, name);
-        blockStateModelGenerator.registerParentedItemModel(block, Identifier.of(AestheticStorage.MOD_ID, "block/"+ name));
+        blockStateModelGenerator.registerParentedItemModel(block, new Identifier(AestheticStorage.MOD_ID, "block/"+ name));
     }
 
     @Override

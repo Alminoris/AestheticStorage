@@ -38,8 +38,8 @@ public class ModRecipeProvider extends FabricRecipeProvider
         for(String name : BlockSetsHelper.WOODS)
         {
             String blockName = (name.equals("crimson") || name.equals("warped")) ? "stem" : (name.equals("bamboo") ? "block" : "log");
-            Block block = Registry.BLOCK.get(Identifier.of("minecraft","stripped_"+name+"_"+blockName));
-            Block block1 = Registry.BLOCK.get(Identifier.of("minecraft",name+"_"+blockName));
+            Block block = Registry.BLOCK.get(new Identifier("minecraft","stripped_"+name+"_"+blockName));
+            Block block1 = Registry.BLOCK.get(new Identifier("minecraft",name+"_"+blockName));
             registerCabinet(recipeExporter, ModBlocks.CABINETS.get(name), block1, block);
             registerCabinetFlipdown(recipeExporter, ModBlocks.FLIPDOWN_CABINETS.get(name), block1, block);
             registerCabinetFlipup(recipeExporter, ModBlocks.FLIPUP_CABINETS.get(name), block1, block);

@@ -9,11 +9,11 @@ import net.minecraft.util.registry.Registry;
 public class ModScreenHandlers
 {
     public static final ScreenHandlerType<CabinetScreenHandler> CABINET_SCREEN_HANDLER =
-            Registry.register(Registry.SCREEN_HANDLER, Identifier.of(AestheticStorage.MOD_ID, "cabinet"),
+            Registry.register(Registry.SCREEN_HANDLER, new Identifier(AestheticStorage.MOD_ID, "cabinet"),
                     new ExtendedScreenHandlerType<>(CabinetScreenHandler::new));
 
     public static final ScreenHandlerType<CupboardScreenHandler> CUPBOARD_SCREEN_HANDLER =
-            Registry.register(Registry.SCREEN_HANDLER, Identifier.of(AestheticStorage.MOD_ID, "cupboard"),
+            Registry.register(Registry.SCREEN_HANDLER, new Identifier(AestheticStorage.MOD_ID, "cupboard"),
                     new ExtendedScreenHandlerType<>(CupboardScreenHandler::new));
 
     public static void registerScreenHandlers()

@@ -124,7 +124,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     {
         if (!player.getMainHandStack().isEmpty())
         {
-            if (player.getMainHandStack().isIn(TagKey.of(Registry.ITEM_KEY, Identifier.of("aestheticseating", "wrench"))))
+            if (player.getMainHandStack().isIn(TagKey.of(Registry.ITEM_KEY, new Identifier("aestheticseating", "wrench"))))
             {
                 Variant currentVariant = state.get(VARIANT);
 

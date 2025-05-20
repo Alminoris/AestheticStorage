@@ -15,14 +15,14 @@ import java.util.List;
 public class ModBlockEntities
 {
     public static final BlockEntityType<CabinetBlockEntity> CABINET_BLOCK_ENTITY =
-            Registry.register(Registry.BLOCK_ENTITY_TYPE, Identifier.of(AestheticStorage.MOD_ID, "cabinet_be"),
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(AestheticStorage.MOD_ID, "cabinet_be"),
                     FabricBlockEntityTypeBuilder.create(CabinetBlockEntity::new,
                             toBlockArray(ModBlocks.CABINETS.elements(),
                                     ModBlocks.FLIPUP_CABINETS.elements(),
                                     ModBlocks.FLIPDOWN_CABINETS.elements())).build());
 
     public static final BlockEntityType<CupboardBlockEntity> CUPBOARD_BLOCK_ENTITY =
-            Registry.register(Registry.BLOCK_ENTITY_TYPE, Identifier.of(AestheticStorage.MOD_ID, "cupboard_be"),
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(AestheticStorage.MOD_ID, "cupboard_be"),
                     FabricBlockEntityTypeBuilder.create(CupboardBlockEntity::new,
                             toBlockArray(ModBlocks.CUPBOARDS.elements())).build());
 

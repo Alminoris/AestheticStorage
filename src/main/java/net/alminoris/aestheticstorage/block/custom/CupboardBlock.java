@@ -192,7 +192,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     {
         if (!player.getMainHandStack().isEmpty())
         {
-            if (player.getMainHandStack().isIn(TagKey.of(Registry.ITEM_KEY, Identifier.of("aestheticseating", "wrench"))))
+            if (player.getMainHandStack().isIn(TagKey.of(Registry.ITEM_KEY, new Identifier("aestheticseating", "wrench"))))
             {
                 boolean newFlipped = !state.get(FLIPPED);
                 Direction facing = state.get(FACING);

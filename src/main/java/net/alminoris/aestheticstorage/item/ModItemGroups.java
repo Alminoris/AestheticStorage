@@ -19,7 +19,7 @@ public class ModItemGroups
 
     public static List<String> EXTRA_STONES_WF = new ArrayList<>();
 
-    public static final ItemGroup ASTRG_TAB = FabricItemGroupBuilder.build(new Identifier(AestheticStorage.MOD_ID, "ashelftab"),
+    public static final ItemGroup ASTRG_TAB = FabricItemGroupBuilder.build(new Identifier(AestheticStorage.MOD_ID, "astrgtab"),
             () -> new ItemStack(ModBlocks.CABINETS.get("oak")));
 
     public static void registerItemGroups()

@@ -22,7 +22,7 @@ public class CupboardScreen extends HandledScreen<CupboardScreenHandler>
     private final String NAME = Registry.BLOCK.getId(Objects.requireNonNull(handler.blockEntity.getWorld())
             .getBlockState(handler.blockEntity.getPos()).getBlock()).getPath();
 
-    private final Identifier TEXTURE = Identifier.of(AestheticStorage.MOD_ID, "textures/gui/"+ getWoodName() +".png");
+    private final Identifier TEXTURE = new Identifier(AestheticStorage.MOD_ID, "textures/gui/"+ getWoodName() +".png");
 
     private final Dictionary<String, Integer> WOOD_COLORS = new Hashtable<>()
     {{
