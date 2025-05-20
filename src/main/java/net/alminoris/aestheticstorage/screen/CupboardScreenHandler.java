@@ -54,9 +54,9 @@ public class CupboardScreenHandler extends ScreenHandler
     }
 
     @Override
-    public void onClosed(PlayerEntity player)
+    public void close(PlayerEntity player)
     {
-        super.onClosed(player);
+        super.close(player);
 
         if (player.getWorld().isClient) return;
 
@@ -106,7 +106,7 @@ public class CupboardScreenHandler extends ScreenHandler
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int invSlot)
+    public ItemStack transferSlot(PlayerEntity player, int invSlot)
     {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);

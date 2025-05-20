@@ -6,7 +6,7 @@ import net.alminoris.aestheticstorage.item.ModItems;
 import net.alminoris.aestheticstorage.util.helper.BlockSetsHelper;
 import net.alminoris.aestheticstorage.util.helper.ModJsonHelper;
 import net.alminoris.aestheticstorage.util.helper.ModJsonTemplates;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -16,9 +16,9 @@ import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider
 {
-    public ModModelProvider(FabricDataOutput output)
+    public ModModelProvider(FabricDataGenerator dataGenerator)
     {
-        super(output);
+        super(dataGenerator);
     }
 
     @Override

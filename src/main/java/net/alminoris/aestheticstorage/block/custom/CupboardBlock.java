@@ -1,10 +1,7 @@
 package net.alminoris.aestheticstorage.block.custom;
 
-import com.mojang.serialization.MapCodec;
-import net.alminoris.aestheticstorage.AestheticStorage;
 import net.alminoris.aestheticstorage.block.entity.CupboardBlockEntity;
 import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
-import net.alminoris.aestheticstorage.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -13,20 +10,18 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -119,7 +114,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     {
         World world = ctx.getWorld();
         BlockPos pos = ctx.getBlockPos();
-        Direction facing = ctx.getHorizontalPlayerFacing();
+        Direction facing = ctx.getPlayer().getHorizontalFacing();
         boolean waterlogged = world.getFluidState(pos).getFluid() == Fluids.WATER;
 
         // Лічильники вверх і вниз
@@ -164,7 +159,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     {
         if (state.get(WATERLOGGED))
         {
-            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
         return updateCupboardVariant(state, world, pos);
@@ -197,7 +192,7 @@ public class CupboardBlock extends BlockWithEntity implements BlockEntityProvide
     {
         if (!player.getMainHandStack().isEmpty())
         {
-            if (player.getMainHandStack().isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of("aestheticseating", "wrench"))))
+            if (player.getMainHandStack().isIn(TagKey.of(Registry.ITEM_KEY, Identifier.of("aestheticseating", "wrench"))))
             {
                 boolean newFlipped = !state.get(FLIPPED);
                 Direction facing = state.get(FACING);

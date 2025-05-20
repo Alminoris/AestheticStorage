@@ -8,9 +8,9 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -19,7 +19,7 @@ import java.util.Objects;
 
 public class CabinetScreen extends HandledScreen<CabinetScreenHandler>
 {
-    private final String NAME = Registries.BLOCK.getId(Objects.requireNonNull(handler.blockEntity.getWorld())
+    private final String NAME = Registry.BLOCK.getId(Objects.requireNonNull(handler.blockEntity.getWorld())
             .getBlockState(handler.blockEntity.getPos()).getBlock()).getPath();
 
     private final Identifier TEXTURE = Identifier.of(AestheticStorage.MOD_ID, "textures/gui/"+ getWoodName() +".png");
@@ -171,7 +171,7 @@ public class CabinetScreen extends HandledScreen<CabinetScreenHandler>
     @Override
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY)
     {
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, TEXTURE);
 

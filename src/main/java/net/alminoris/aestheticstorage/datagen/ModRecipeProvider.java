@@ -4,29 +4,28 @@ import net.alminoris.aestheticstorage.block.ModBlocks;
 import net.alminoris.aestheticstorage.item.ModItems;
 import net.alminoris.aestheticstorage.util.helper.BlockSetsHelper;
 import net.alminoris.aestheticstorage.util.helper.ModJsonHelper;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider
 {
-    public ModRecipeProvider(FabricDataOutput output)
+    public ModRecipeProvider(FabricDataGenerator dataGenerator) 
     {
-        super(output);
+        super(dataGenerator);
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> recipeExporter)
+    public void generateRecipes(Consumer<RecipeJsonProvider> recipeExporter)
     {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.WRENCH, 1)
+        ShapedRecipeJsonBuilder.create(ModItems.WRENCH, 1)
                 .pattern(" # ")
                 .pattern(" ##")
                 .pattern("/  ")
@@ -39,8 +38,8 @@ public class ModRecipeProvider extends FabricRecipeProvider
         for(String name : BlockSetsHelper.WOODS)
         {
             String blockName = (name.equals("crimson") || name.equals("warped")) ? "stem" : (name.equals("bamboo") ? "block" : "log");
-            Block block = Registries.BLOCK.get(Identifier.of("minecraft","stripped_"+name+"_"+blockName));
-            Block block1 = Registries.BLOCK.get(Identifier.of("minecraft",name+"_"+blockName));
+            Block block = Registry.BLOCK.get(Identifier.of("minecraft","stripped_"+name+"_"+blockName));
+            Block block1 = Registry.BLOCK.get(Identifier.of("minecraft",name+"_"+blockName));
             registerCabinet(recipeExporter, ModBlocks.CABINETS.get(name), block1, block);
             registerCabinetFlipdown(recipeExporter, ModBlocks.FLIPDOWN_CABINETS.get(name), block1, block);
             registerCabinetFlipup(recipeExporter, ModBlocks.FLIPUP_CABINETS.get(name), block1, block);
@@ -80,7 +79,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
     private void registerCabinet(Consumer<RecipeJsonProvider> recipeExporter, Block output, Block ing1, Block ing2)
     {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 4)
+        ShapedRecipeJsonBuilder.create(output, 4)
                 .pattern("/#")
                 .pattern("/#")
                 .input('#', ing1)
@@ -92,7 +91,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
     private void registerCabinetFlipup(Consumer<RecipeJsonProvider> recipeExporter, Block output, Block ing1, Block ing2)
     {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 4)
+        ShapedRecipeJsonBuilder.create(output, 4)
                 .pattern("//")
                 .pattern("##")
                 .input('#', ing1)
@@ -104,7 +103,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
     private void registerCabinetFlipdown(Consumer<RecipeJsonProvider> recipeExporter, Block output, Block ing1, Block ing2)
     {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 4)
+        ShapedRecipeJsonBuilder.create(output, 4)
                 .pattern("##")
                 .pattern("//")
                 .input('#', ing1)
@@ -116,7 +115,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
     private void registerCupboard(Consumer<RecipeJsonProvider> recipeExporter, Block output, Block ing1, Block ing2)
     {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 4)
+        ShapedRecipeJsonBuilder.create(output, 4)
                 .pattern("/#")
                 .pattern("/#")
                 .pattern("/#")

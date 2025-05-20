@@ -2,19 +2,18 @@ package net.alminoris.aestheticstorage.screen;
 
 import net.alminoris.aestheticstorage.AestheticStorage;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class ModScreenHandlers
 {
     public static final ScreenHandlerType<CabinetScreenHandler> CABINET_SCREEN_HANDLER =
-            Registry.register(Registries.SCREEN_HANDLER, Identifier.of(AestheticStorage.MOD_ID, "cabinet"),
+            Registry.register(Registry.SCREEN_HANDLER, Identifier.of(AestheticStorage.MOD_ID, "cabinet"),
                     new ExtendedScreenHandlerType<>(CabinetScreenHandler::new));
 
     public static final ScreenHandlerType<CupboardScreenHandler> CUPBOARD_SCREEN_HANDLER =
-            Registry.register(Registries.SCREEN_HANDLER, Identifier.of(AestheticStorage.MOD_ID, "cupboard"),
+            Registry.register(Registry.SCREEN_HANDLER, Identifier.of(AestheticStorage.MOD_ID, "cupboard"),
                     new ExtendedScreenHandlerType<>(CupboardScreenHandler::new));
 
     public static void registerScreenHandlers()

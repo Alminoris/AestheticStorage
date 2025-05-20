@@ -2,6 +2,7 @@ package net.alminoris.aestheticstorage.block.custom;
 
 import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
 import net.alminoris.aestheticstorage.block.entity.CabinetBlockEntity;
+import net.fabricmc.fabric.impl.biome.modification.BuiltInRegistryKeys;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -10,18 +11,18 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
@@ -81,7 +82,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     public BlockState getPlacementState(ItemPlacementContext ctx)
     {
         boolean waterlogged = ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER;
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing()).with(WATERLOGGED, waterlogged);
+        return this.getDefaultState().with(FACING, ctx.getPlayer().getHorizontalFacing()).with(WATERLOGGED, waterlogged);
     }
 
     @Override
@@ -90,7 +91,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     {
         if (state.get(WATERLOGGED))
         {
-            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
         return updateCabinetVariant(state, world, pos);
@@ -123,7 +124,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     {
         if (!player.getMainHandStack().isEmpty())
         {
-            if (player.getMainHandStack().isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of("aestheticseating", "wrench"))))
+            if (player.getMainHandStack().isIn(TagKey.of(Registry.ITEM_KEY, Identifier.of("aestheticseating", "wrench"))))
             {
                 Variant currentVariant = state.get(VARIANT);
 
