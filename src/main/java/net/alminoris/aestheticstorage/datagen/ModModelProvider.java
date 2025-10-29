@@ -48,6 +48,38 @@ public class ModModelProvider extends FabricModelProvider
             registerCabinetFlipdown(blockStateModelGenerator,  ModBlocks.FLIPDOWN_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipdown_"+name, "stripped_"+name+"_log", name+"_log");
             registerCupboard(blockStateModelGenerator,  ModBlocks.CUPBOARDS.get(name),"aestheticstorage:block/", "cupboard_"+name, "stripped_"+name+"_log", name+"_log");
         }
+
+        for(String name : BlockSetsHelper.WT_WOOD_NAMES)
+        {
+            registerCabinet(blockStateModelGenerator, ModBlocks.CABINETS.get(name), "aestheticstorage:block/", "cabinet_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipup(blockStateModelGenerator,  ModBlocks.FLIPUP_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipup_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipdown(blockStateModelGenerator,  ModBlocks.FLIPDOWN_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipdown_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCupboard(blockStateModelGenerator,  ModBlocks.CUPBOARDS.get(name),"aestheticstorage:block/", "cupboard_"+name, "stripped_"+name+"_log", name+"_log");
+        }
+
+        for(String name : BlockSetsHelper.ST_WOOD_NAMES)
+        {
+            registerCabinet(blockStateModelGenerator, ModBlocks.CABINETS.get(name), "aestheticstorage:block/", "cabinet_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipup(blockStateModelGenerator,  ModBlocks.FLIPUP_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipup_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipdown(blockStateModelGenerator,  ModBlocks.FLIPDOWN_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipdown_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCupboard(blockStateModelGenerator,  ModBlocks.CUPBOARDS.get(name),"aestheticstorage:block/", "cupboard_"+name, "stripped_"+name+"_log", name+"_log");
+        }
+
+        for(String name : BlockSetsHelper.MT_WOOD_NAMES)
+        {
+            registerCabinet(blockStateModelGenerator, ModBlocks.CABINETS.get(name), "aestheticstorage:block/", "cabinet_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipup(blockStateModelGenerator,  ModBlocks.FLIPUP_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipup_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipdown(blockStateModelGenerator,  ModBlocks.FLIPDOWN_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipdown_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCupboard(blockStateModelGenerator,  ModBlocks.CUPBOARDS.get(name),"aestheticstorage:block/", "cupboard_"+name, "stripped_"+name+"_log", name+"_log");
+        }
+
+        for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
+        {
+            registerCabinet(blockStateModelGenerator, ModBlocks.CABINETS.get(name), "aestheticstorage:block/", "cabinet_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipup(blockStateModelGenerator,  ModBlocks.FLIPUP_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipup_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCabinetFlipdown(blockStateModelGenerator,  ModBlocks.FLIPDOWN_CABINETS.get(name),"aestheticstorage:block/", "cabinet_flipdown_"+name, "stripped_"+name+"_log", name+"_log");
+            registerCupboard(blockStateModelGenerator,  ModBlocks.CUPBOARDS.get(name),"aestheticstorage:block/", "cupboard_"+name, "stripped_"+name+"_log", name+"_log");
+        }
     }
 
     public void registerCabinet(BlockStateModelGenerator blockStateModelGenerator, Block block, String modId, String name, String baseName, String legName)

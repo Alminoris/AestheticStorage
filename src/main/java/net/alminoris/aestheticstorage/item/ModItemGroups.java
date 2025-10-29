@@ -14,17 +14,6 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups
 {
-    public static final String[] EXTRA_WOODS_WF =
-            {
-                    "olive", "tamarisk"
-            };
-
-    public static final String[] EXTRA_WOODS_AN =
-            {
-                    "hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum", "white_mulberry", "wild_cherry",
-                    "bauhinia", "pine", "fir", "cedar"
-            };
-
     public static final ItemGroup ASTRG_TAB = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(AestheticStorage.MOD_ID, "astrgtab"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.astrgtab"))
