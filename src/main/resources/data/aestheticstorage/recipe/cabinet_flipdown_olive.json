@@ -6,7 +6,7 @@
       "item": "wildfields:olive_log"
     },
     "/": {
-      "item": "arborealnature:stripped_olive_log"
+      "item": "wildfields:stripped_olive_log"
     }
   },
   "pattern": [
