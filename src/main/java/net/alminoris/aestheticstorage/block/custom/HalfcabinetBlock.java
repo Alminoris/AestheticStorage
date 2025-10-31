@@ -39,7 +39,7 @@ import java.util.List;
 
 public class HalfcabinetBlock extends BlockWithEntity implements BlockEntityProvider
 {
-    private final VoxelShape SHAPE = HalfcabinetBlock.createCuboidShape(0D, 0D, 9D, 16D, 16D,16D);
+    private final VoxelShape SHAPE = HalfcabinetBlock.createCuboidShape(0D, 0D, 0D, 16D, 16D,7D);
 
     public final boolean HAS_FLIP;
 
