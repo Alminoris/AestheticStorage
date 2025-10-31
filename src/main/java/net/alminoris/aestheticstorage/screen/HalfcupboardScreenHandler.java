@@ -41,7 +41,7 @@ public class HalfcupboardScreenHandler extends ScreenHandler
         INVENTORY.onOpen(playerInventory.player);
         this.blockEntity = blockEntity;
 
-        for(int i = 0; i < 4; i++)
+        for(int i = 1; i < 3; i++)
         {
             for(int j = 0; j < 2; j++)
             {

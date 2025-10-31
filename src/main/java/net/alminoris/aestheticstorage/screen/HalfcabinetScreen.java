@@ -24,7 +24,7 @@ public class HalfcabinetScreen extends HandledScreen<HalfcabinetScreenHandler>
     private final String NAME = Registries.BLOCK.getId(Objects.requireNonNull(handler.blockEntity.getWorld())
             .getBlockState(handler.blockEntity.getPos()).getBlock()).getPath();
 
-    private final Identifier TEXTURE = Identifier.of(AestheticStorage.MOD_ID, "textures/gui/"+ getWoodName() +".png");
+    private final Identifier TEXTURE = Identifier.of(AestheticStorage.MOD_ID, "textures/gui/"+ getWoodName() + "_half.png");
 
     public HalfcabinetScreen(HalfcabinetScreenHandler handler, PlayerInventory inventory, Text title)
     {
