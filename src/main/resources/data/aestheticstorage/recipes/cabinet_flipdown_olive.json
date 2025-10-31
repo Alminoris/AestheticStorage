@@ -6,7 +6,7 @@
       "item": "wildfields:olive_log"
     },
     "/": {
-      "item": "arborealnature:stripped_olive_log"
+      "item": "wildfields:stripped_olive_log"
     }
   },
   "pattern": [
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "aestheticstorage:cabinet_flipdown_olive"
+    "item": "aestheticstorage:cabinet_flipdown_olive"
   }
 }

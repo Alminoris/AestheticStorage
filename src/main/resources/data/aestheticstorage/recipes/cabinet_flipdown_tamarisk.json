@@ -6,7 +6,7 @@
       "item": "wildfields:tamarisk_log"
     },
     "/": {
-      "item": "arborealnature:stripped_tamarisk_log"
+      "item": "wildfields:stripped_tamarisk_log"
     }
   },
   "pattern": [
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "aestheticstorage:cabinet_flipdown_tamarisk"
+    "item": "aestheticstorage:cabinet_flipdown_tamarisk"
   }
 }

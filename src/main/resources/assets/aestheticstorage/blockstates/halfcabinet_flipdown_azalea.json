@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north,variant=normal,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea" },
+    "facing=south,variant=normal,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea", "y": 180 },
+    "facing=west,variant=normal,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea", "y": 270 },
+    "facing=east,variant=normal,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea", "y": 90 },
+    "facing=north,variant=left,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left" },
+    "facing=south,variant=left,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left", "y": 180 },
+    "facing=west,variant=left,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left", "y": 270 },
+    "facing=east,variant=left,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left", "y": 90 },
+    "facing=north,variant=right,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right" },
+    "facing=south,variant=right,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right", "y": 180 },
+    "facing=west,variant=right,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right", "y": 270 },
+    "facing=east,variant=right,open=false": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right", "y": 90 },
+    "facing=north,variant=normal,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_open" },
+    "facing=south,variant=normal,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_open", "y": 180 },
+    "facing=west,variant=normal,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_open", "y": 270 },
+    "facing=east,variant=normal,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_open", "y": 90 },
+    "facing=north,variant=left,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left_open" },
+    "facing=south,variant=left,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left_open", "y": 180 },
+    "facing=west,variant=left,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left_open", "y": 270 },
+    "facing=east,variant=left,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_left_open", "y": 90 },
+    "facing=north,variant=right,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right_open" },
+    "facing=south,variant=right,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right_open", "y": 180 },
+    "facing=west,variant=right,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right_open", "y": 270 },
+    "facing=east,variant=right,open=true": { "model": "aestheticstorage:block/halfcabinet_flipdown_azalea_right_open", "y": 90 }
+  }
+}
