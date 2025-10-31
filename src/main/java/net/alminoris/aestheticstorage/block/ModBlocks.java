@@ -3,6 +3,8 @@ package net.alminoris.aestheticstorage.block;
 import net.alminoris.aestheticstorage.AestheticStorage;
 import net.alminoris.aestheticstorage.block.custom.CabinetBlock;
 import net.alminoris.aestheticstorage.block.custom.CupboardBlock;
+import net.alminoris.aestheticstorage.block.custom.HalfcabinetBlock;
+import net.alminoris.aestheticstorage.block.custom.HalfcupboardBlock;
 import net.alminoris.aestheticstorage.util.helper.BlockSetsHelper;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -48,6 +50,38 @@ public class ModBlocks
         for(String name : BlockSetsHelper.getWoods())
         {
             put(name, registerBlock("cupboard_"+name, new CupboardBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))));
+        }
+    }};
+
+    public static final Dictionary<String, Block> HALFCABINETS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getWoods())
+        {
+            put(name, registerBlock("halfcabinet_"+name, new HalfcabinetBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), false)));
+        }
+    }};
+
+    public static final Dictionary<String, Block> FLIPUP_HALFCABINETS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getWoods())
+        {
+            put(name, registerBlock("halfcabinet_flipup_"+name, new HalfcabinetBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), true)));
+        }
+    }};
+
+    public static final Dictionary<String, Block> FLIPDOWN_HALFCABINETS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getWoods())
+        {
+            put(name, registerBlock("halfcabinet_flipdown_"+name, new HalfcabinetBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS), true)));
+        }
+    }};
+
+    public static final Dictionary<String, Block> HALFCUPBOARDS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getWoods())
+        {
+            put(name, registerBlock("halfcupboard_"+name, new HalfcupboardBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))));
         }
     }};
 
