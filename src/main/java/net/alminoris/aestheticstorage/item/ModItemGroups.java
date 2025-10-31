@@ -30,6 +30,10 @@ public class ModItemGroups
                             entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
                             entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
                             entries.add(ModBlocks.CUPBOARDS.get(name));
+                            entries.add(ModBlocks.HALFCABINETS.get(name));
+                            entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                            entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                            entries.add(ModBlocks.HALFCUPBOARDS.get(name));
                         }
 
                         if (FabricLoader.getInstance().isModLoaded("arborealnature"))
@@ -40,6 +44,10 @@ public class ModItemGroups
                                 entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
                                 entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
                                 entries.add(ModBlocks.CUPBOARDS.get(name));
+                                entries.add(ModBlocks.HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.HALFCUPBOARDS.get(name));
                             }
                         }
 
@@ -51,6 +59,70 @@ public class ModItemGroups
                                 entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
                                 entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
                                 entries.add(ModBlocks.CUPBOARDS.get(name));
+                                entries.add(ModBlocks.HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.HALFCUPBOARDS.get(name));
+                            }
+                        }
+
+                        if (FabricLoader.getInstance().isModLoaded("whisperleaftrees"))
+                        {
+                            for(String name : BlockSetsHelper.WT_WOOD_NAMES)
+                            {
+                                entries.add(ModBlocks.CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
+                                entries.add(ModBlocks.CUPBOARDS.get(name));
+                                entries.add(ModBlocks.HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.HALFCUPBOARDS.get(name));
+                            }
+                        }
+
+                        if (FabricLoader.getInstance().isModLoaded("silverwoodtrees"))
+                        {
+                            for(String name : BlockSetsHelper.ST_WOOD_NAMES)
+                            {
+                                entries.add(ModBlocks.CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
+                                entries.add(ModBlocks.CUPBOARDS.get(name));
+                                entries.add(ModBlocks.HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.HALFCUPBOARDS.get(name));
+                            }
+                        }
+
+                        if (FabricLoader.getInstance().isModLoaded("missingtrees"))
+                        {
+                            for(String name : BlockSetsHelper.MT_WOOD_NAMES)
+                            {
+                                entries.add(ModBlocks.CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
+                                entries.add(ModBlocks.CUPBOARDS.get(name));
+                                entries.add(ModBlocks.HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.HALFCUPBOARDS.get(name));
+                            }
+                        }
+
+                        if (FabricLoader.getInstance().isModLoaded("natures_spirit"))
+                        {
+                            for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
+                            {
+                                entries.add(ModBlocks.CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_CABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_CABINETS.get(name));
+                                entries.add(ModBlocks.CUPBOARDS.get(name));
+                                entries.add(ModBlocks.HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPDOWN_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.FLIPUP_HALFCABINETS.get(name));
+                                entries.add(ModBlocks.HALFCUPBOARDS.get(name));
                             }
                         }
                     }).build());

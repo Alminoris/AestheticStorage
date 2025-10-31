@@ -46,6 +46,11 @@ public class ModRecipeProvider extends FabricRecipeProvider
             registerCabinetFlipdown(recipeExporter, ModBlocks.FLIPDOWN_CABINETS.get(name), block1, block);
             registerCabinetFlipup(recipeExporter, ModBlocks.FLIPUP_CABINETS.get(name), block1, block);
             registerCupboard(recipeExporter, ModBlocks.CUPBOARDS.get(name), block1, block);
+
+            registerHalfCabinet(recipeExporter, ModBlocks.HALFCABINETS.get(name), block1, block);
+            registerHalfCabinetFlipdown(recipeExporter, ModBlocks.FLIPDOWN_HALFCABINETS.get(name), block1, block);
+            registerHalfCabinetFlipup(recipeExporter, ModBlocks.FLIPUP_HALFCABINETS.get(name), block1, block);
+            registerHalfCupboard(recipeExporter, ModBlocks.HALFCUPBOARDS.get(name), block1, block);
         }
 
         for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
@@ -61,6 +66,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             ModJsonHelper.createShapedRecipe("cupboard_" + name, "4", "arborealnature:" + name + "_log", "arborealnature:stripped_" + name + "_log",
                     "\"/#\",", "\"/#\",", "\"/#\"");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_" + name, "4", "arborealnature:" + name + "_log", "arborealnature:stripped_" + name + "_log",
+                    "\"/ \",", "\" #\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipdown_" + name, "4", "arborealnature:" + name + "_log", "arborealnature:stripped_" + name + "_log",
+                    "\"#\",", "\"/\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipup_" + name, "4", "arborealnature:" + name + "_log", "arborealnature:stripped_" + name + "_log",
+                    "\"/\",", "\"#\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcupboard_" + name, "4", "arborealnature:" + name + "_log", "arborealnature:stripped_" + name + "_log",
+                    "\"#\",", "\"/\",", "\"#\"");
         }
 
         for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
@@ -76,6 +93,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             ModJsonHelper.createShapedRecipe("cupboard_" + name, "4", "wildfields:" + name + "_log", "wildfields:stripped_" + name + "_log",
                     "\"/#\",", "\"/#\",", "\"/#\"");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_" + name, "4", "wildfields:" + name + "_log", "wildfields:stripped_" + name + "_log",
+                    "\"/ \",", "\" #\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipdown_" + name, "4", "wildfields:" + name + "_log", "wildfields:stripped_" + name + "_log",
+                    "\"#\",", "\"/\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipup_" + name, "4", "wildfields:" + name + "_log", "wildfields:stripped_" + name + "_log",
+                    "\"/\",", "\"#\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcupboard_" + name, "4", "wildfields:" + name + "_log", "wildfields:stripped_" + name + "_log",
+                    "\"#\",", "\"/\",", "\"#\"");
         }
 
         for(String name : BlockSetsHelper.WT_WOOD_NAMES)
@@ -91,6 +120,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             ModJsonHelper.createShapedRecipe("cupboard_" + name, "4", "whisperleaftrees:" + name + "_log", "whisperleaftrees:stripped_" + name + "_log",
                     "\"/#\",", "\"/#\",", "\"/#\"");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_" + name, "4", "whisperleaftrees:" + name + "_log", "whisperleaftrees:stripped_" + name + "_log",
+                    "\"/ \",", "\" #\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipdown_" + name, "4", "whisperleaftrees:" + name + "_log", "whisperleaftrees:stripped_" + name + "_log",
+                    "\"#\",", "\"/\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipup_" + name, "4", "whisperleaftrees:" + name + "_log", "whisperleaftrees:stripped_" + name + "_log",
+                    "\"/\",", "\"#\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcupboard_" + name, "4", "whisperleaftrees:" + name + "_log", "whisperleaftrees:stripped_" + name + "_log",
+                    "\"#\",", "\"/\",", "\"#\"");
         }
 
         for(String name : BlockSetsHelper.ST_WOOD_NAMES)
@@ -106,6 +147,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             ModJsonHelper.createShapedRecipe("cupboard_" + name, "4", "silverwoodtrees:" + name + "_log", "silverwoodtrees:stripped_" + name + "_log",
                     "\"/#\",", "\"/#\",", "\"/#\"");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_" + name, "4", "silverwoodtrees:" + name + "_log", "silverwoodtrees:stripped_" + name + "_log",
+                    "\"/ \",", "\" #\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipdown_" + name, "4", "silverwoodtrees:" + name + "_log", "silverwoodtrees:stripped_" + name + "_log",
+                    "\"#\",", "\"/\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipup_" + name, "4", "silverwoodtrees:" + name + "_log", "silverwoodtrees:stripped_" + name + "_log",
+                    "\"/\",", "\"#\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcupboard_" + name, "4", "silverwoodtrees:" + name + "_log", "silverwoodtrees:stripped_" + name + "_log",
+                    "\"#\",", "\"/\",", "\"#\"");
         }
 
         for(String name : BlockSetsHelper.MT_WOOD_NAMES)
@@ -121,6 +174,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
             ModJsonHelper.createShapedRecipe("cupboard_" + name, "4", "missingtrees:" + name + "_log", "missingtrees:stripped_" + name + "_log",
                     "\"/#\",", "\"/#\",", "\"/#\"");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_" + name, "4", "missingtrees:" + name + "_log", "missingtrees:stripped_" + name + "_log",
+                    "\"/ \",", "\" #\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipdown_" + name, "4", "missingtrees:" + name + "_log", "missingtrees:stripped_" + name + "_log",
+                    "\"#\",", "\"/\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipup_" + name, "4", "missingtrees:" + name + "_log", "missingtrees:stripped_" + name + "_log",
+                    "\"/\",", "\"#\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcupboard_" + name, "4", "missingtrees:" + name + "_log", "missingtrees:stripped_" + name + "_log",
+                    "\"#\",", "\"/\",", "\"#\"");
         }
 
         for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
@@ -140,7 +205,72 @@ public class ModRecipeProvider extends FabricRecipeProvider
             ModJsonHelper.createShapedRecipe("cupboard_" + name, "4", "natures_spirit:" + name.replace("_nss", "")
                             + "_log", "natures_spirit:stripped_" + name.replace("_nss", "") + "_log",
                     "\"/#\",", "\"/#\",", "\"/#\"");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_" + name, "4", "natures_spirit:" + name.replace("_nss", "")
+                            + "_log", "natures_spirit:stripped_" + name.replace("_nss", "") + "_log",
+                    "\"/ \",", "\" #\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipdown_" + name, "4", "natures_spirit:" + name.replace("_nss", "")
+                            + "_log", "natures_spirit:stripped_" + name.replace("_nss", "") + "_log",
+                    "\"#\",", "\"/\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcabinet_flipup_" + name, "4", "natures_spirit:" + name.replace("_nss", "")
+                            + "_log", "natures_spirit:stripped_" + name.replace("_nss", "") + "_log",
+                    "\"/\",", "\"#\"", "");
+
+            ModJsonHelper.createShapedRecipe("halfcupboard_" + name, "4", "natures_spirit:" + name.replace("_nss", "")
+                            + "_log", "natures_spirit:stripped_" + name.replace("_nss", "") + "_log",
+                    "\"#\",", "\"/\",", "\"#\"");
         }
+    }
+
+    private void registerHalfCabinet(RecipeExporter recipeExporter, Block output, Block ing1, Block ing2)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3)
+                .pattern("/ ")
+                .pattern(" #")
+                .input('#', ing1)
+                .input('/', ing2)
+                .criterion(hasItem(ing1), conditionsFromItem(ing1))
+                .criterion(hasItem(ing2), conditionsFromItem(ing2))
+                .offerTo(recipeExporter);
+    }
+
+    private void registerHalfCabinetFlipup(RecipeExporter recipeExporter, Block output, Block ing1, Block ing2)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3)
+                .pattern("/")
+                .pattern("#")
+                .input('#', ing1)
+                .input('/', ing2)
+                .criterion(hasItem(ing1), conditionsFromItem(ing1))
+                .criterion(hasItem(ing2), conditionsFromItem(ing2))
+                .offerTo(recipeExporter);
+    }
+
+    private void registerHalfCabinetFlipdown(RecipeExporter recipeExporter, Block output, Block ing1, Block ing2)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3)
+                .pattern("#")
+                .pattern("/")
+                .input('#', ing1)
+                .input('/', ing2)
+                .criterion(hasItem(ing1), conditionsFromItem(ing1))
+                .criterion(hasItem(ing2), conditionsFromItem(ing2))
+                .offerTo(recipeExporter);
+    }
+
+    private void registerHalfCupboard(RecipeExporter recipeExporter, Block output, Block ing1, Block ing2)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output, 3)
+                .pattern("#")
+                .pattern("/")
+                .pattern("#")
+                .input('#', ing1)
+                .input('/', ing2)
+                .criterion(hasItem(ing1), conditionsFromItem(ing1))
+                .criterion(hasItem(ing2), conditionsFromItem(ing2))
+                .offerTo(recipeExporter);
     }
 
     private void registerCabinet(RecipeExporter recipeExporter, Block output, Block ing1, Block ing2)
