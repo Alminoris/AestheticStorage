@@ -74,7 +74,7 @@ public class HalfcupboardScreenHandler extends ScreenHandler
 
         while (!stack.isEmpty())
         {
-            BlockPos currentPos = stack.removeLast();
+            BlockPos currentPos = stack.remove(stack.size()-1);
             if (!visited.add(currentPos)) continue;
 
             BlockState currentState = world.getBlockState(currentPos);
