@@ -14,13 +14,13 @@ import java.util.stream.Collectors;
 
 public class ModLanguageProviderEnUs extends FabricLanguageProvider
 {
-    public ModLanguageProviderEnUs(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup)
+    public ModLanguageProviderEnUs(FabricDataOutput dataOutput)
     {
-        super(dataOutput, "en_us", registryLookup);
+        super(dataOutput, "en_us");
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder)
+    public void generateTranslations(TranslationBuilder translationBuilder)
     {
         Registries.BLOCK.stream()
                 .filter(block ->

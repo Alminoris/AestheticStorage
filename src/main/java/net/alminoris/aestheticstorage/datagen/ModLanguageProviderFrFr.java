@@ -11,13 +11,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModLanguageProviderFrFr extends FabricLanguageProvider
 {
-    public ModLanguageProviderFrFr(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup)
+    public ModLanguageProviderFrFr(FabricDataOutput dataOutput)
     {
-        super(dataOutput, "fr_fr", registryLookup);
+        super(dataOutput, "fr_fr");
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder)
+    public void generateTranslations(TranslationBuilder translationBuilder)
     {
         Map<String, String> woodNStoneObjects = new LinkedHashMap<>();
 
