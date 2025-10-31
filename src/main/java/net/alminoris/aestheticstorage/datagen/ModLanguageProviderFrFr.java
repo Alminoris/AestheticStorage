@@ -28,6 +28,10 @@ public class ModLanguageProviderFrFr extends FabricLanguageProvider
         woodObjects.put("cabinet_", "Placard en %s");
         woodObjects.put("cabinet_flipup", "Placard supérieur en %s");
         woodObjects.put("cabinet_flipdown_", "Placard inférieur en %s");
+        woodObjects.put("halfcupboard_", "Petit armoire en %s");
+        woodObjects.put("halfcabinet_", "Petit placard en %s");
+        woodObjects.put("halfcabinet_flipup", "Petit placard supérieur en %s");
+        woodObjects.put("halfcabinet_flipdown_", "Petit placard inférieur en %s");
 
         Map<String, String> stoneMaterials = new LinkedHashMap<>();
         stoneMaterials.put("stone", "pierre");

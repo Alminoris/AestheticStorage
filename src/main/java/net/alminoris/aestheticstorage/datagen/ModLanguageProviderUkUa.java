@@ -28,6 +28,10 @@ public class ModLanguageProviderUkUa extends FabricLanguageProvider
         woodObjects.put("cabinet_", "Шафка з %s");
         woodObjects.put("cabinet_flipup", "Верхня шафка з %s");
         woodObjects.put("cabinet_flipdown_", "Нижня шафка з %s");
+        woodObjects.put("halfcupboard_", "Мала шафа з %s");
+        woodObjects.put("halfcabinet_", "Мала шафка з %s");
+        woodObjects.put("halfcabinet_flipup", "Верхня мала шафка з %s");
+        woodObjects.put("halfcabinet_flipdown_", "Нижня мала шафка з %s");
 
         Map<String, String> stoneMaterials = new LinkedHashMap<>();
         stoneMaterials.put("stone", "каменю");
