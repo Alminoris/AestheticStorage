@@ -3,6 +3,7 @@ package net.alminoris.aestheticstorage.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.alminoris.aestheticstorage.block.entity.HalfcabinetBlockEntity;
 import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
+import net.alminoris.aestheticstorage.util.helper.VoxelShapeHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -25,13 +26,21 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HalfcabinetBlock extends BlockWithEntity implements BlockEntityProvider
 {
+    private final VoxelShape SHAPE = HalfcabinetBlock.createCuboidShape(0D, 0D, 9D, 16D, 16D,16D);
+
     public final boolean HAS_FLIP;
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -86,6 +95,22 @@ public class HalfcabinetBlock extends BlockWithEntity implements BlockEntityProv
     public BlockRenderType getRenderType(BlockState state)
     {
         return BlockRenderType.MODEL;
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+    {
+        return getRotatedShape(state);
+    }
+
+    private VoxelShape getRotatedShape(BlockState state)
+    {
+        Direction direction = state.get(FACING);
+
+        List<Box> boxes = new ArrayList<>();
+        boxes.add(SHAPE.getBoundingBox());
+
+        return VoxelShapeHelper.rotateShape(boxes, direction);
     }
 
     @Override
