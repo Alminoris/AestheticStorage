@@ -26,6 +26,18 @@ public class ModBlockEntities
                     FabricBlockEntityTypeBuilder.create(CupboardBlockEntity::new,
                             toBlockArray(ModBlocks.CUPBOARDS.elements())).build());
 
+    public static final BlockEntityType<HalfcabinetBlockEntity> HALFCABINET_BLOCK_ENTITY =
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, Identifier.of(AestheticStorage.MOD_ID, "halfcabinet_be"),
+                    FabricBlockEntityTypeBuilder.create(HalfcabinetBlockEntity::new,
+                            toBlockArray(ModBlocks.HALFCABINETS.elements(),
+                                    ModBlocks.FLIPUP_HALFCABINETS.elements(),
+                                    ModBlocks.FLIPDOWN_HALFCABINETS.elements())).build());
+
+    public static final BlockEntityType<HalfcupboardBlockEntity> HALFCUPBOARD_BLOCK_ENTITY =
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, Identifier.of(AestheticStorage.MOD_ID, "halfcupboard_be"),
+                    FabricBlockEntityTypeBuilder.create(HalfcupboardBlockEntity::new,
+                            toBlockArray(ModBlocks.HALFCUPBOARDS.elements())).build());
+
     public static void registerBlockEntities()
     {
 
