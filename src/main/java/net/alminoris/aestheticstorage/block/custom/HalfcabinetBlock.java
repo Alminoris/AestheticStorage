@@ -33,6 +33,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static net.minecraft.util.math.Direction.NORTH;
+
 public class HalfcabinetBlock extends BlockWithEntity implements BlockEntityProvider
 {
     private final VoxelShape SHAPE = HalfcabinetBlock.createCuboidShape(0D, 0D, 0D, 16D, 16D,7D);
@@ -65,7 +67,7 @@ public class HalfcabinetBlock extends BlockWithEntity implements BlockEntityProv
     {
         super(settings.nonOpaque());
         HAS_FLIP = hasFlip;
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(VARIANT, Variant.NORMAL).with(OPEN, false).with(WATERLOGGED, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, NORTH).with(VARIANT, Variant.NORMAL).with(OPEN, false).with(WATERLOGGED, false));
     }
 
     @Override

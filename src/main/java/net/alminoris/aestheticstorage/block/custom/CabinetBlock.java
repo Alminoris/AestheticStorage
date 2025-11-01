@@ -26,6 +26,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
+import static net.minecraft.util.math.Direction.NORTH;
+
 public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
 {
     public final boolean HAS_FLIP;
@@ -56,7 +58,7 @@ public class CabinetBlock extends BlockWithEntity implements BlockEntityProvider
     {
         super(settings.nonOpaque());
         HAS_FLIP = hasFlip;
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(VARIANT, Variant.NORMAL).with(OPEN, false).with(WATERLOGGED, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, NORTH).with(VARIANT, Variant.NORMAL).with(OPEN, false).with(WATERLOGGED, false));
     }
 
     @Override

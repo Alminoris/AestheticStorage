@@ -33,6 +33,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static net.minecraft.util.math.Direction.*;
+
 public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityProvider
 {
     public static final int MAX_STACK_HEIGHT = 4;
@@ -69,7 +71,7 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
     public HalfcupboardBlock(Settings settings)
     {
         super(settings.nonOpaque());
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(VARIANT, Variant.NORMAL)
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, NORTH).with(VARIANT, Variant.NORMAL)
                 .with(OPEN, false).with(FLIPPED, false).with(MANUAL_FLIPPED, false).with(WATERLOGGED, false));
     }
 
@@ -118,8 +120,8 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
         boolean waterlogged = world.getFluidState(pos).getFluid() == Fluids.WATER;
 
         // Лічильники вверх і вниз
-        int countUp = countConnectedCupboards(world, pos.up(), facing, Direction.UP);
-        int countDown = countConnectedCupboards(world, pos.down(), facing, Direction.DOWN);
+        int countUp = countConnectedCupboards(world, pos.up(), facing, UP);
+        int countDown = countConnectedCupboards(world, pos.down(), facing, DOWN);
 
         int totalHeight = countUp + countDown + 1;
 
@@ -296,7 +298,7 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
 
     private void updateSurroundingVerticalCupboards(World world, BlockPos pos)
     {
-        for (Direction direction : new Direction[]{Direction.UP, Direction.DOWN})
+        for (Direction direction : new Direction[]{UP, DOWN})
         {
             BlockPos neighborPos = pos.offset(direction);
             BlockState neighborState = world.getBlockState(neighborPos);
