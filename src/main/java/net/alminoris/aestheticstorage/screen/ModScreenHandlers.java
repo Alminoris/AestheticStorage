@@ -16,6 +16,14 @@ public class ModScreenHandlers
             Registry.register(Registry.SCREEN_HANDLER, new Identifier(AestheticStorage.MOD_ID, "cupboard"),
                     new ExtendedScreenHandlerType<>(CupboardScreenHandler::new));
 
+    public static final ScreenHandlerType<HalfcabinetScreenHandler> HALFCABINET_SCREEN_HANDLER =
+            Registry.register(Registry.SCREEN_HANDLER, new Identifier(AestheticStorage.MOD_ID, "halfcabinet"),
+                    new ExtendedScreenHandlerType<>(HalfcabinetScreenHandler::new));
+
+    public static final ScreenHandlerType<HalfcupboardScreenHandler> HALFCUPBOARD_SCREEN_HANDLER =
+            Registry.register(Registry.SCREEN_HANDLER, new Identifier(AestheticStorage.MOD_ID, "halfcupboard"),
+                    new ExtendedScreenHandlerType<>(HalfcupboardScreenHandler::new));
+
     public static void registerScreenHandlers()
     {
 
