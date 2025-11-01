@@ -19,9 +19,9 @@ public class AestheticStorage implements ModInitializer
 	@Override
 	public void onInitialize()
 	{
+		ModItemGroups.registerItemGroups();
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
-		ModItemGroups.registerItemGroups();
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
 	}

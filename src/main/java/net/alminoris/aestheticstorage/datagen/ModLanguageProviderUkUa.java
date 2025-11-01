@@ -135,6 +135,6 @@ public class ModLanguageProviderUkUa extends FabricLanguageProvider
 
         translationBuilder.add("item." + AestheticStorage.MOD_ID + ".wrench","Гайковий ключ");
 
-        translationBuilder.add("itemgroup.astrgtab","Aesthetic Storage");
+        translationBuilder.add("itemGroup.aestheticstorage.astrgtab","Aesthetic Storage");
     }
 }

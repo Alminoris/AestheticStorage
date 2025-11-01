@@ -135,6 +135,6 @@ public class ModLanguageProviderDeDe extends FabricLanguageProvider
 
         translationBuilder.add("item." + AestheticStorage.MOD_ID + ".wrench", "Schraubenschlüssel");
 
-        translationBuilder.add("itemgroup.astrgtab","Aesthetic Storage");
+        translationBuilder.add("itemGroup.aestheticstorage.astrgtab","Aesthetic Storage");
     }
 }

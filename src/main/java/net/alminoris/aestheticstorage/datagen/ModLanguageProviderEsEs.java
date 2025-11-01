@@ -135,6 +135,6 @@ public class ModLanguageProviderEsEs extends FabricLanguageProvider
 
         translationBuilder.add("item." + AestheticStorage.MOD_ID + ".wrench", "Llave inglesa");
 
-        translationBuilder.add("itemgroup.astrgtab","Aesthetic Storage");
+        translationBuilder.add("itemGroup.aestheticstorage.astrgtab","Aesthetic Storage");
     }
 }

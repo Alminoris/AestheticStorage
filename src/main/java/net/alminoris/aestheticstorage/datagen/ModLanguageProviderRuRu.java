@@ -135,6 +135,6 @@ public class ModLanguageProviderRuRu extends FabricLanguageProvider
 
         translationBuilder.add("item." + AestheticStorage.MOD_ID + ".wrench", "Гаечный ключ");
 
-        translationBuilder.add("itemgroup.astrgtab","Aesthetic Storage");
+        translationBuilder.add("itemGroup.aestheticstorage.astrgtab","Aesthetic Storage");
     }
 }
