@@ -36,7 +36,7 @@ public class HalfcupboardScreenHandler extends ScreenHandler
                                      HalfcupboardBlockEntity blockEntity)
     {
         super(ModScreenHandlers.HALFCUPBOARD_SCREEN_HANDLER, syncId);
-        checkSize(blockEntity, 8);
+        checkSize(blockEntity, 4);
         this.INVENTORY = blockEntity;
         INVENTORY.onOpen(playerInventory.player);
         this.blockEntity = blockEntity;

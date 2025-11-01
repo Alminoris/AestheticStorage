@@ -27,7 +27,7 @@ public class HalfcabinetScreenHandler extends ScreenHandler
                                     HalfcabinetBlockEntity blockEntity)
     {
         super(ModScreenHandlers.HALFCABINET_SCREEN_HANDLER, syncId);
-        checkSize(blockEntity, 8);
+        checkSize(blockEntity, 4);
         this.INVENTORY = blockEntity;
         INVENTORY.onOpen(playerInventory.player);
         this.blockEntity = blockEntity;
