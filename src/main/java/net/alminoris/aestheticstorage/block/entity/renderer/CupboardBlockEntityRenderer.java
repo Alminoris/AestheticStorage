@@ -55,16 +55,16 @@ public class CupboardBlockEntityRenderer implements BlockEntityRenderer<Cupboard
             switch (counter)
             {
                 case 0:
-                    matrices.translate(0.25f, 0.175f, 0.25f);
+                    matrices.translate(0.25f, 0.2f, 0.25f);
                     break;
                 case 1:
-                    matrices.translate(0.75f, 0.175f, 0.25f);
+                    matrices.translate(0.75f, 0.2f, 0.25f);
                     break;
                 case 2:
-                    matrices.translate(0.25f, 0.175f, 0.75f);
+                    matrices.translate(0.25f, 0.2f, 0.75f);
                     break;
                 case 3:
-                    matrices.translate(0.75f, 0.175f, 0.75f);
+                    matrices.translate(0.75f, 0.2f, 0.75f);
                     break;
                 case 4:
                     matrices.translate(0.25f, 0.65f, 0.25f);
@@ -81,7 +81,6 @@ public class CupboardBlockEntityRenderer implements BlockEntityRenderer<Cupboard
             }
 
             matrices.scale(0.25f, 0.25f, 0.25f);
-            matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(180));
 
             itemRenderer.renderItem(stack, ModelTransformationMode.GUI,
                     getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV,

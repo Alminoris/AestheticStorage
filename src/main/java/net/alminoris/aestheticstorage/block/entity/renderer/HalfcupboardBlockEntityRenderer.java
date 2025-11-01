@@ -55,10 +55,10 @@ public class HalfcupboardBlockEntityRenderer implements BlockEntityRenderer<Half
             switch (counter)
             {
                 case 0:
-                    matrices.translate(0.25f, 0.175f, 0.25f);
+                    matrices.translate(0.25f, 0.2f, 0.25f);
                     break;
                 case 1:
-                    matrices.translate(0.25f, 0.175f, 0.75f);
+                    matrices.translate(0.25f, 0.2f, 0.75f);
                     break;
                 case 2:
                     matrices.translate(0.25f, 0.65f, 0.75f);
@@ -69,7 +69,6 @@ public class HalfcupboardBlockEntityRenderer implements BlockEntityRenderer<Half
             }
 
             matrices.scale(0.25f, 0.25f, 0.25f);
-            matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(180));
 
             itemRenderer.renderItem(stack, ModelTransformationMode.GUI,
                     getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV,
