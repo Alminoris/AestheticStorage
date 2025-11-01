@@ -23,6 +23,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CupboardBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPosPayload>, ImplementedInventory
 {
     private final DefaultedList<ItemStack> INVENTORY = DefaultedList.ofSize(8, ItemStack.EMPTY);
@@ -31,6 +34,19 @@ public class CupboardBlockEntity extends BlockEntity implements ExtendedScreenHa
     public CupboardBlockEntity(BlockPos pos, BlockState state)
     {
         super(ModBlockEntities.CUPBOARD_BLOCK_ENTITY, pos, state);
+    }
+
+    public List<ItemStack> getRenderStack()
+    {
+        List<ItemStack> result = new ArrayList<>();
+        for(int i = 0; i < INVENTORY.size(); i++)
+        {
+            if (!this.getStack(i).isEmpty())
+                result.add(this.getStack(i));
+
+        }
+
+        return result;
     }
 
     public void tick(World world, BlockPos pos, BlockState state)

@@ -36,6 +36,19 @@ public class CabinetBlockEntity extends BlockEntity implements ExtendedScreenHan
         super(ModBlockEntities.CABINET_BLOCK_ENTITY, pos, state);
     }
 
+    public List<ItemStack> getRenderStack()
+    {
+        List<ItemStack> result = new ArrayList<>();
+        for(int i = 0; i < INVENTORY.size(); i++)
+        {
+            if (!this.getStack(i).isEmpty())
+                result.add(this.getStack(i));
+
+        }
+
+        return result;
+    }
+
     public void tick(World world, BlockPos pos, BlockState state)
     {
         if (world.isClient)
