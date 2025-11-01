@@ -23,9 +23,12 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HalfcupboardBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory
 {
-    private final DefaultedList<ItemStack> INVENTORY = DefaultedList.ofSize(8, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> INVENTORY = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private String name;
 
     public HalfcupboardBlockEntity(BlockPos pos, BlockState state)
@@ -41,10 +44,23 @@ public class HalfcupboardBlockEntity extends BlockEntity implements ExtendedScre
         name = Registry.BLOCK.getId(state.getBlock()).getPath();
     }
 
+    public List<ItemStack> getRenderStack()
+    {
+        List<ItemStack> result = new ArrayList<>();
+        for(int i = 0; i < INVENTORY.size(); i++)
+        {
+            if (!this.getStack(i).isEmpty())
+                result.add(this.getStack(i));
+
+        }
+
+        return result;
+    }
+
     @Override
     public void markDirty()
     {
-        world.updateListeners(pos, getCachedState(), getCachedState(), 8);
+        world.updateListeners(pos, getCachedState(), getCachedState(), 4);
         super.markDirty();
     }
 

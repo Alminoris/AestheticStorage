@@ -22,6 +22,9 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CabinetBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory
 {
     private final DefaultedList<ItemStack> INVENTORY = DefaultedList.ofSize(8, ItemStack.EMPTY);
@@ -38,6 +41,19 @@ public class CabinetBlockEntity extends BlockEntity implements ExtendedScreenHan
             return;
 
         name = Registry.BLOCK.getId(state.getBlock()).getPath();
+    }
+
+    public List<ItemStack> getRenderStack()
+    {
+        List<ItemStack> result = new ArrayList<>();
+        for(int i = 0; i < INVENTORY.size(); i++)
+        {
+            if (!this.getStack(i).isEmpty())
+                result.add(this.getStack(i));
+
+        }
+
+        return result;
     }
 
     @Override

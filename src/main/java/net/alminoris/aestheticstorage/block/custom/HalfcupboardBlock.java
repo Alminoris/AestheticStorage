@@ -37,7 +37,7 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
 {
     public static final int MAX_STACK_HEIGHT = 4;
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 9D, 16, 16, 16);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 16D, 16D, 7D);
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
@@ -117,7 +117,6 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
         Direction facing = ctx.getPlayer().getHorizontalFacing();
         boolean waterlogged = world.getFluidState(pos).getFluid() == Fluids.WATER;
 
-        // Лічильники вверх і вниз
         int countUp = countConnectedCupboards(world, pos.up(), facing, Direction.UP);
         int countDown = countConnectedCupboards(world, pos.down(), facing, Direction.DOWN);
 
@@ -125,7 +124,7 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
 
         if (totalHeight > MAX_STACK_HEIGHT)
         {
-            return null; // блок не ставиться
+            return null;
         }
 
         return this.getDefaultState()
