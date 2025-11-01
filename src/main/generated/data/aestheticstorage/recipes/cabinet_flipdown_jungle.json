@@ -1,6 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "pattern": [
+    "##",
+    "//"
+  ],
   "key": {
     "#": {
       "item": "minecraft:jungle_log"
@@ -9,13 +12,8 @@
       "item": "minecraft:stripped_jungle_log"
     }
   },
-  "pattern": [
-    "##",
-    "//"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstorage:cabinet_flipdown_jungle"
-  },
-  "show_notification": true
+    "item": "aestheticstorage:cabinet_flipdown_jungle",
+    "count": 4
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "/",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_log"
+    },
+    "/": {
+      "item": "minecraft:stripped_spruce_log"
+    }
+  },
+  "result": {
+    "item": "aestheticstorage:halfcupboard_spruce",
+    "count": 3
+  }
+}

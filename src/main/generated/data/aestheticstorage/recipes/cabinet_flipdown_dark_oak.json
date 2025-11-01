@@ -1,6 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "pattern": [
+    "##",
+    "//"
+  ],
   "key": {
     "#": {
       "item": "minecraft:dark_oak_log"
@@ -9,13 +12,8 @@
       "item": "minecraft:stripped_dark_oak_log"
     }
   },
-  "pattern": [
-    "##",
-    "//"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstorage:cabinet_flipdown_dark_oak"
-  },
-  "show_notification": true
+    "item": "aestheticstorage:cabinet_flipdown_dark_oak",
+    "count": 4
+  }
 }

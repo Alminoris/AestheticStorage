@@ -1,6 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "pattern": [
+    "##",
+    "//"
+  ],
   "key": {
     "#": {
       "item": "minecraft:crimson_stem"
@@ -9,13 +12,8 @@
       "item": "minecraft:stripped_crimson_stem"
     }
   },
-  "pattern": [
-    "##",
-    "//"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstorage:cabinet_flipdown_crimson"
-  },
-  "show_notification": true
+    "item": "aestheticstorage:cabinet_flipdown_crimson",
+    "count": 4
+  }
 }

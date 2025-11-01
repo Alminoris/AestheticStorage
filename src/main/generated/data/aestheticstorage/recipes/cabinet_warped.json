@@ -1,6 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "pattern": [
+    "/#",
+    "/#"
+  ],
   "key": {
     "#": {
       "item": "minecraft:warped_stem"
@@ -9,13 +12,8 @@
       "item": "minecraft:stripped_warped_stem"
     }
   },
-  "pattern": [
-    "/#",
-    "/#"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstorage:cabinet_warped"
-  },
-  "show_notification": true
+    "item": "aestheticstorage:cabinet_warped",
+    "count": 4
+  }
 }

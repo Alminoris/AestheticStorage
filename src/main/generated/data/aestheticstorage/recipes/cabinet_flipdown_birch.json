@@ -1,6 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "pattern": [
+    "##",
+    "//"
+  ],
   "key": {
     "#": {
       "item": "minecraft:birch_log"
@@ -9,13 +12,8 @@
       "item": "minecraft:stripped_birch_log"
     }
   },
-  "pattern": [
-    "##",
-    "//"
-  ],
   "result": {
-    "count": 4,
-    "item": "aestheticstorage:cabinet_flipdown_birch"
-  },
-  "show_notification": true
+    "item": "aestheticstorage:cabinet_flipdown_birch",
+    "count": 4
+  }
 }
