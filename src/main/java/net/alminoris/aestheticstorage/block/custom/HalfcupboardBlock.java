@@ -3,6 +3,7 @@ package net.alminoris.aestheticstorage.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.alminoris.aestheticstorage.block.entity.HalfcupboardBlockEntity;
 import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
+import net.alminoris.aestheticstorage.util.helper.VoxelShapeHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -25,6 +26,7 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -91,22 +93,32 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
         return CODEC;
     }
 
+    private VoxelShape getRotatedShape(BlockState state)
+    {
+        Direction direction = state.get(FACING);
+
+        List<Box> boxes = new ArrayList<>();
+        boxes.add(SHAPE.getBoundingBox());
+
+        return VoxelShapeHelper.rotateShape(boxes, direction);
+    }
+
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return SHAPE;
+        return getRotatedShape(state);
     }
 
     @Override
     protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return SHAPE;
+        return getRotatedShape(state);
     }
 
     @Override
     protected VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return SHAPE;
+        return getRotatedShape(state);
     }
 
     @Override
@@ -137,7 +149,7 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
 
         if (totalHeight > MAX_STACK_HEIGHT)
         {
-            return null; // блок не ставиться
+            return null;
         }
 
         return this.getDefaultState()

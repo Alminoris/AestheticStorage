@@ -54,28 +54,28 @@ public class CabinetBlockEntityRenderer implements BlockEntityRenderer<CabinetBl
             switch (counter)
             {
                 case 0:
-                    matrices.translate(0.25f, 0.2f, 0.25f);
-                    break;
-                case 1:
-                    matrices.translate(0.75f, 0.2f, 0.25f);
-                    break;
-                case 2:
-                    matrices.translate(0.25f, 0.2f, 0.75f);
-                    break;
-                case 3:
-                    matrices.translate(0.75f, 0.2f, 0.75f);
-                    break;
-                case 4:
                     matrices.translate(0.25f, 0.65f, 0.25f);
                     break;
-                case 5:
+                case 1:
                     matrices.translate(0.75f, 0.65f, 0.25f);
                     break;
-                case 6:
+                case 2:
                     matrices.translate(0.25f, 0.65f, 0.75f);
                     break;
-                case 7:
+                case 3:
                     matrices.translate(0.75f, 0.65f, 0.75f);
+                    break;
+                case 4:
+                    matrices.translate(0.25f, 0.2f, 0.25f);
+                    break;
+                case 5:
+                    matrices.translate(0.75f, 0.2f, 0.25f);
+                    break;
+                case 6:
+                    matrices.translate(0.25f, 0.2f, 0.75f);
+                    break;
+                case 7:
+                    matrices.translate(0.75f, 0.2f, 0.75f);
                     break;
             }
 
