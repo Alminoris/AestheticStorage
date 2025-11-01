@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:spruce_log"
@@ -17,6 +16,5 @@
   "result": {
     "count": 4,
     "item": "aestheticstorage:cupboard_spruce"
-  },
-  "show_notification": true
+  }
 }

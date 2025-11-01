@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:warped_stem"
@@ -17,6 +16,5 @@
   "result": {
     "count": 4,
     "item": "aestheticstorage:cupboard_warped"
-  },
-  "show_notification": true
+  }
 }
