@@ -1,11 +1,14 @@
 package net.alminoris.aestheticstorage;
 
+import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
+import net.alminoris.aestheticstorage.block.entity.renderer.*;
 import net.alminoris.aestheticstorage.screen.CabinetScreen;
 import net.alminoris.aestheticstorage.screen.CupboardScreen;
 import net.alminoris.aestheticstorage.screen.HalfcabinetScreen;
 import net.alminoris.aestheticstorage.screen.HalfcupboardScreen;
 import net.alminoris.aestheticstorage.screen.ModScreenHandlers;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 
 public class AestheticStorageClient implements ClientModInitializer
@@ -17,5 +20,10 @@ public class AestheticStorageClient implements ClientModInitializer
         HandledScreens.register(ModScreenHandlers.CUPBOARD_SCREEN_HANDLER, CupboardScreen::new);
         HandledScreens.register(ModScreenHandlers.HALFCABINET_SCREEN_HANDLER, HalfcabinetScreen::new);
         HandledScreens.register(ModScreenHandlers.HALFCUPBOARD_SCREEN_HANDLER, HalfcupboardScreen::new);
+
+        BlockEntityRendererRegistry.register(ModBlockEntities.CABINET_BLOCK_ENTITY, CabinetBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.CUPBOARD_BLOCK_ENTITY, CupboardBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.HALFCABINET_BLOCK_ENTITY, HalfcabinetBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.HALFCUPBOARD_BLOCK_ENTITY, HalfcupboardBlockEntityRenderer::new);
     }
 }

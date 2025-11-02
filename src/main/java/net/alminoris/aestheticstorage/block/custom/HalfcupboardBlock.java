@@ -2,6 +2,7 @@ package net.alminoris.aestheticstorage.block.custom;
 
 import net.alminoris.aestheticstorage.block.entity.HalfcupboardBlockEntity;
 import net.alminoris.aestheticstorage.block.entity.ModBlockEntities;
+import net.alminoris.aestheticstorage.util.helper.VoxelShapeHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -20,6 +21,7 @@ import net.minecraft.tag.TagKey;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
@@ -37,7 +39,7 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
 {
     public static final int MAX_STACK_HEIGHT = 4;
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 9D, 16, 16, 16);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0D, 0D, 0D, 16D, 16D, 7D);
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
@@ -79,22 +81,32 @@ public class HalfcupboardBlock extends BlockWithEntity implements BlockEntityPro
         builder.add(FACING, WATERLOGGED, VARIANT, OPEN, FLIPPED, MANUAL_FLIPPED);
     }
 
+    private VoxelShape getRotatedShape(BlockState state)
+    {
+        Direction direction = state.get(FACING);
+
+        List<Box> boxes = new ArrayList<>();
+        boxes.add(SHAPE.getBoundingBox());
+
+        return VoxelShapeHelper.rotateShape(boxes, direction);
+    }
+
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return SHAPE;
+        return getRotatedShape(state);
     }
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return SHAPE;
+        return getRotatedShape(state);
     }
 
     @Override
     public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return SHAPE;
+        return getRotatedShape(state);
     }
 
     @Override
